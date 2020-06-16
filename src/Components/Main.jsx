@@ -1,4 +1,4 @@
-//TODO get page from url => send in req from useEffect
+// TODO get page from url => send in req from useEffect
 
 import React, { useEffect, useState } from 'preact/compat';
 import { useHistory, useParams } from "react-router-dom";
@@ -12,11 +12,9 @@ const Main = () => {
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState([]);
   useEffect(() => {
-    console.log("page", pageNum);
-    const page = pageNum ?? 1; // TODO find babel code
-    console.log(page);
+    const page = pageNum ?? 1; // TODO do i need fix if num bigger?
     // fetch(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`)
-    const repos = fetch(`http://localhost:6701/getData/${page}`)
+    fetch(`http://localhost:6701/getData/${page}`)
       .then(res => res.json())
       .then(
         data => {
