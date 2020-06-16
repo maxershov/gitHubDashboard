@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server  --config ./devWebpack.config.js"
+    "dev": "webpack-dev-server  --config ./devWebpack.config.js",
+    "local": "node ./backend/local.js"
   },
   "browserslist": [
     ">1%",
@@ -20,6 +21,9 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "preact": "^10.4.4",
     "react-router-dom": "^5.2.0"
   },
