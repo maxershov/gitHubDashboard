@@ -1,19 +1,27 @@
+//TODO get page from url => send in req from useEffect
+
 import React, { useEffect, useState } from 'preact/compat';
+import { useHistory, useParams } from "react-router-dom";
 import Repo from './Repository';
 
 
 const Main = () => {
+  const history = useHistory();
+  const { pageNum } = useParams();
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState([]);
   useEffect(() => {
+    console.log("page", pageNum);
+    const page = pageNum ?? 1; // TODO find babel code
+    console.log(page);
     // fetch(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`)
-    const repos = fetch(`http://localhost:6701/getData`)
+    const repos = fetch(`http://localhost:6701/getData/${page}`)
       .then(res => res.json())
       .then(
         data => {
           // console.log(data);
           setLoading(false);
-          setRepos(data.data.items);
+          setRepos(data.items);
         },
         err => {
           console.log(err)

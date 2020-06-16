@@ -7,9 +7,9 @@ import Card from "./Card";
 const RoutesContent = props => {
   return (
     <Switch>
-      <Route exact path="/main" component={Main} />
+      <Route exact path="/main/:pageNum" component={Main} />
       <Route exact path="/card" component={Card} />
-      <Redirect exact from="/" to="/main" />
+      <Redirect exact from="/" to="/main/1" />
     </Switch>
   );
 }
