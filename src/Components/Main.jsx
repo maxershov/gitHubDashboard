@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'preact/compat';
 import { useHistory, useParams } from "react-router-dom";
 import Repo from './Repository';
+import Pagination from './Pagination';
 
 
 const Main = () => {
@@ -28,7 +29,7 @@ const Main = () => {
           setLoading(false);
         }
       );
-  }, [])
+  }, [pageNum])
   return loading ? <h1>LOADING</h1> : (
     <>
       {console.log(repos)}
@@ -36,6 +37,7 @@ const Main = () => {
       {repos.map((repo) => {
         return <Repo name={repo.name} url={repo.html_url} stars={repo.stargazers_count} updated={repo.updated_at} />
       })}
+      <Pagination currentPage={pageNum} />
     </>
   );
 }
