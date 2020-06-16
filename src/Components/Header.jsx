@@ -5,7 +5,7 @@ const Header = () => {
 
   return (
     <nav>
-      <NavLink activeClassName="menu-nav-active" to="/main/1">Main</NavLink>
+      <NavLink activeClassName="menu-nav-active" to="/main/">Main</NavLink>
       <NavLink activeClassName="menu-nav-active" to="/card">Card</NavLink>
     </nav>
   );
