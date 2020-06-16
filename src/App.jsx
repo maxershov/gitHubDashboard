@@ -1,11 +1,15 @@
 import React from 'preact/compat';
 import './App.css';
-
-import Hello from './Components/Hello';
+import { BrowserRouter as Router } from 'react-router-dom';
+import RoutesContent from './Components/RoutesContent';
+import Header from './Components/Header';
 
 const App = (props) => {
   return (
-    <Hello></Hello>
+    <Router>
+      <Header />
+      <RoutesContent />
+    </Router>
   );
 }
 
