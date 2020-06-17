@@ -4,6 +4,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const data = require("./data");
 const dataTwo = require("./dataTwo");
+const repoData = require("./repositoryData");
+
 
 const app = express();
 app.use(bodyParser.json());
@@ -21,8 +23,14 @@ app.get("/getData/:pageNum", (req, res) => {
     } else {
         res.send(JSON.stringify(dataTwo.dataTwo))
     }
-    // pageNum === "1" ? res.send(JSON.stringify(data)) : res.send(JSON.stringify(dataTwo));
 });
+
+
+app.get("/getRepo/:repoId", (req, res) => {
+    const { repoId } = req.params;
+    res.send(JSON.stringify(repoData.repositoryData))
+}
+);
 
 
 app.listen(port);

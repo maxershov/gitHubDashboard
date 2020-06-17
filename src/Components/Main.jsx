@@ -8,7 +8,7 @@ const Main = () => {
   const { searchQuery, pageNum } = useQueryGetter();
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState([]);
-  
+
   useEffect(() => {
     console.log(`will be fetched search=${searchQuery} and page=${pageNum}`)
     const page = pageNum ?? 1; // TODO do i need fix if num bigger?
@@ -33,7 +33,7 @@ const Main = () => {
       <Search />
       <h1>Main Page</h1>
       {repos.map((repo) => {
-        return <Repo name={repo.name} url={repo.html_url} stars={repo.stargazers_count} updated={repo.updated_at} />
+        return <Repo id={repo.id} name={repo.name} url={repo.html_url} stars={repo.stargazers_count} updated={repo.updated_at} />
       })}
       <Pagination />
     </>

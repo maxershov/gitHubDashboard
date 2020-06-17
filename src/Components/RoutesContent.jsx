@@ -8,7 +8,7 @@ const RoutesContent = props => {
   return (
     <Switch>
       <Route exact path="/main/" component={Main} />
-      <Route exact path="/card" component={Card} />
+      <Route exact path="/card/:id" component={Card} />
       <Redirect exact from="/" to="/main/" />
     </Switch>
   );
