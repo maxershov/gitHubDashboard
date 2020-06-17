@@ -44,18 +44,24 @@ const Card = () => {
       <h1 className="card-name">{repo.name}</h1>
       <div className="flex-container">
         <article className="owner">
-          <a className="owner-login" href={repo.owner.html_url}>{repo.owner.login}</a>
+          <p className="card__label label">Created by</p>
           <img className="owner-avatar" alt="Profile" src={repo.owner.avatar_url} />
+          <a className="owner__link link" href={repo.owner.html_url}>{repo.owner.login}</a>
         </article>
         <article className="card">
+          <p className="card__label label">Stars</p>
           <p className="card_stars">
             <img className="starImg" alt="star" src={star} />{repo.stargazers_count}
           </p>
+          <p className="card__label label">Last updated</p>
           <p className="card-updated">{repo.updated_at}</p>
+          <p className="card__label label">Description</p>
           <p className="card-description">{repo.description}</p>
+          <p className="card__label label">Languages</p>
           <ul className="languages">{Object.keys(languages).map(value =>
             <li className="languages__item">{value}</li>)}
           </ul>
+          <p className="card__label label">Top contributors</p>
           <article className="contributor">{contributors.map(person => (
             <a className="contributor__link" href={person.html_url}>
               <img className="contributor__avatar" title={person.login} alt="Contributor" src={person.avatar_url} />

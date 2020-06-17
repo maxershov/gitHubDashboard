@@ -18,8 +18,8 @@ const Search = () => {
     return (
       <div className="search">
         <form className="search__form" onSubmit={handleSubmit}>
-          <input className="search__input" type="text" placeholder="Название репозитория" ref={inputRef} />
-          <button className="search__btn" type="submit">ПОИСК</button>
+          <input className="search__input" type="text" placeholder="Repository name" ref={inputRef} />
+          <button className="search__btn" type="submit">SEARCH</button>
         </form>
       </div>
     );

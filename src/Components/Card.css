@@ -3,11 +3,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-bottom: 10px;
+  margin: 0 15px;
+  padding: 20px 0;
+  border-radius: 20px;
+  box-shadow: 0px 6px 8px rgb(80, 77, 77), -0px -1px 10px rgb(199, 191, 191);
+}
+
+.card__label {
+  font-size: 1.4em;
 }
 
 .card {
-  border: 1px solid;
   min-width: 300px;
   flex: 1;
   text-align: center;
@@ -15,7 +21,6 @@
 
 .owner {
   min-width: 300px;
-  border: 1px solid;
   flex: 0.5;
 }
 
@@ -25,32 +30,46 @@
   text-align: center;
 }
 
-.card-stars {}
+.card_stars {
+  margin-bottom: 20px;
+}
 
-.card-updated {}
+.card-updated {
+  margin-bottom: 20px;
+}
 
 .card-description {
   display: block;
   width: 70%;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-.languages {}
+.languages {
+  display: flex;
+  justify-content: space-evenly;
+  /* list-style: none; */
+  margin-bottom: 20px;
+}
 
-.languages__item {}
-
-.owner-login {
-  display: block;
-  text-decoration: none;
+.languages__item {
+  font-size: 1.1em;
   font-weight: bold;
-  font-size: 1.2em;
+  margin: 0px 4px;
+}
+
+.owner__link {
+  font-size: 1.5em;
 }
 
 .owner-avatar {
-  width: 50%;
+  width: 70%;
+  margin-bottom: 5px;
 }
 
-.contributor {}
+.contributor {
+  margin-bottom: 20px;
+}
 
 .contributor__link {
   margin: 0 5px;
