@@ -7,6 +7,9 @@ body {
     margin: 0;
     color:#3f3f3f;
 }
+button, input, a {
+  font-family: inherit;
+}
 
 p, h1, h2, h3 {
     margin: 5px;
@@ -15,7 +18,7 @@ p, h1, h2, h3 {
 .label {
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.4px;
     color: #8F9094;
   }
 

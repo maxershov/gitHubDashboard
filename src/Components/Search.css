@@ -1,15 +1,32 @@
 .search {
-    text-align: center;
+    text-align: left;
+    margin: 0 10px;
 }
 
 .search__form>* {
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .search__input {
-    width: 65%;
+    border: solid grey;
+    padding: 8px 4px;
+    width: 20%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
-.search__button {
-    width: 15%
+.search__input:focus {
+    width: 80%;
+    transition: width 0.4s ease-in-out;
+}
+
+.search__btn {
+    border: solid grey;
+    background-color: rgb(247, 247, 248);
+    border-top: none;
+    font-weight: bold;
+    padding: 8px 5px;
+    border-bottom-right-radius: 15px;
+    border-left: none;
 }
