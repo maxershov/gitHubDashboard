@@ -5,6 +5,9 @@ import Search from './Search';
 import useQueryGetter from './useQueryGetter'
 import fetchAsync from '../fetchAsync';
 
+import token from '../../token';
+
+
 const Main = () => {
   const { searchQuery, pageNum } = useQueryGetter();
   const [loading, setLoading] = useState(true);
@@ -14,10 +17,14 @@ const Main = () => {
     const page = pageNum ?? 1; // TODO delete
     console.log(`will be fetched search=${searchQuery} and page=${pageNum}`)
     // fetch(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`)
-
+    console.log("token", token);
     async function fetchData() {
       try {
         const data = await fetchAsync(`http://localhost:6701/getData/${page}`);
+        // const data = await fetchAsync(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`, {
+          // headers: {
+          //   authorization: token
+          // }})
         setRepos(data.items);
         setLoading(false);
       } catch (err) {

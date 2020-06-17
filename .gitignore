@@ -126,3 +126,4 @@ host.js
 /.VSCodeCounter
 monitor/stats.json
 .vscode/settings.json
+token.js
