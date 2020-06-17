@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'preact/compat';
 import { useParams } from 'react-router-dom';
 import fetchAsync from '../fetchAsync';
+import star from '../assets/star.svg';
 
+import './Card.css';
 
 import delMe from '../../backend/contr';
 
@@ -39,23 +41,30 @@ const Card = () => {
   }, [id])
   return loading ? <h1>LOADING</h1> : (
     <>
-      <h1>Card Page</h1>
-      <h2>{repo.name}</h2>
-      <h3>{repo.stargazers_count}</h3>
-      <a href={repo.owner.html_url}>{repo.owner.login}</a>
-      <h3>{repo.owner.avatar_url}</h3>
-      <h3>{repo.updated_at}</h3>
-      <h3>{repo.description}</h3>
-      {Object.keys(languages).map(value => <h2>{value}</h2>)}
-      {contributors.map((person) => {
-        return (
-          <>
-            <h2>{person.login}</h2>
-            <h3>{person.avatar_url}</h3>
-          </>
-        )
-      }
-      )}
+      <h1 className="card-name">{repo.name}</h1>
+      <div className="flex-container">
+        <article className="owner">
+          <a className="owner-login" href={repo.owner.html_url}>{repo.owner.login}</a>
+          <img className="owner-avatar" alt="Profile" src={repo.owner.avatar_url} />
+        </article>
+        <article className="card">
+          <p className="card_stars">
+            <img className="starImg" alt="star" src={star} />{repo.stargazers_count}
+          </p>
+          <p className="card-updated">{repo.updated_at}</p>
+          <p className="card-description">{repo.description}</p>
+          <ul className="languages">{Object.keys(languages).map(value =>
+            <li className="languages__item">{value}</li>)}
+          </ul>
+          <article className="contributor">{contributors.map(person => (
+            <a className="contributor__link" href={person.html_url}>
+              <img className="contributor__avatar" title={person.login} alt="Contributor" src={person.avatar_url} />
+            </a>
+          )
+          )}
+          </article>
+        </article>
+      </div>
     </>
   );
 }

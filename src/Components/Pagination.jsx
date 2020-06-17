@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from 'preact/compat';
 import { Link } from 'react-router-dom';
 import useQueryGetter from './useQueryGetter';
@@ -6,15 +7,15 @@ import './Pagination.css';
 
 
 const Pagination = () => {
-  const { searchQuery } = useQueryGetter();
+  const { searchQuery, pageNum } = useQueryGetter();
   return (
-    <>
-      <Link to={`?search=${searchQuery}&page=1`}>1</Link>
-      <Link to={`?search=${searchQuery}&page=2`}>2</Link>
-      <Link to={`?search=${searchQuery}&page=3`}>3</Link>
-      <Link to={`?search=${searchQuery}&page=4`}>4</Link>
-      <Link to={`?search=${searchQuery}&page=5`}>5</Link>
-    </>
+    <nav className="pagination">
+      {[...Array(9)].map((x, i) => (
+        i + 1 == pageNum ? <Link className="page page--active" to={`?search=${searchQuery}&page=${i + 1}`}>{i + 1}</Link>
+          : <Link className="page" to={`?search=${searchQuery}&page=${i + 1}`}>{i + 1}</Link>
+      )
+      )}
+    </nav>
   );
 }
 

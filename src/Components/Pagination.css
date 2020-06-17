@@ -1,0 +1,27 @@
+.pagination {
+    text-align: center;
+}
+
+.page {
+    text-decoration: none;
+    padding: 10px;
+    background-color: gray;
+    font-weight: bold;
+    color: black;
+}
+
+.page:first-child {
+    padding-left: 15px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.page:last-child {
+    padding-right: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.page--active {
+    background-color: red;
+}

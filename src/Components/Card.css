@@ -1,0 +1,61 @@
+.flex-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.card {
+  border: 1px solid;
+  min-width: 300px;
+  flex: 1;
+  text-align: center;
+}
+
+.owner {
+  min-width: 300px;
+  border: 1px solid;
+  flex: 0.5;
+}
+
+.card-name {
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.card-stars {}
+
+.card-updated {}
+
+.card-description {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.languages {}
+
+.languages__item {}
+
+.owner-login {
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.owner-avatar {
+  width: 50%;
+}
+
+.contributor {}
+
+.contributor__link {
+  margin: 0 5px;
+}
+
+.contributor__avatar {
+  width: 7%;
+}
