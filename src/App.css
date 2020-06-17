@@ -9,6 +9,7 @@ body {
 }
 button, input, a {
   font-family: inherit;
+  background-color: inherit;
 }
 
 p, h1, h2, h3 {
