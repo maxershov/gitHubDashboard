@@ -59,7 +59,7 @@ const Card = () => {
             <img className="starImg" alt="star" src={star} />{repo.stargazers_count}
           </p>
           <p className="card__label label">Last updated</p>
-          <p className="card-updated">{repo.updated_at}</p>
+          <p className="card-updated">{new Date(repo.updated_at).toLocaleString('ru')}</p>
           <p className="card__label label">Description</p>
           <p className="card-description">{repo.description}</p>
           <p className="card__label label">Languages</p>

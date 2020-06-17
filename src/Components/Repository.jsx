@@ -16,7 +16,7 @@ const Repository = (props) => {
         <img className="starImg" alt="star" src={star} />{stars}
       </p>
       <p className="repo__label label">Last Updated</p>
-      <p className="repo__updated">{updated}</p>
+      <p className="repo__updated">{new Date(updated).toLocaleString('ru')}</p>
       <a href={url} className="repo__url link">
         <img className="repo__image" alt="githubLogo" src={githubLogo} /> OPEN GITHUB
       </a>
