@@ -2,6 +2,9 @@ import React from 'preact/compat';
 import { Link } from 'react-router-dom';
 import useQueryGetter from './useQueryGetter';
 
+import './Pagination.css';
+
+
 const Pagination = () => {
   const { searchQuery } = useQueryGetter();
   return (

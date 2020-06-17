@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'preact/compat';
 import { useParams } from 'react-router-dom';
 import fetchAsync from '../fetchAsync';
 
+
+import delMe from '../../backend/contr';
+
 // https://api.github.com/repositories/:id
 
 // https://api.github.com/repos/996icu/996.ICU/contributors?per_page=5
@@ -20,9 +23,11 @@ const Card = () => {
       try {
         const data = await fetchAsync(`http://localhost:6701/getRepo/${id}`);
         setRepo(data);
-        const lang = await fetchAsync(data.languages_url);
+        // const lang = await fetchAsync(data.languages_url);
+        const lang = { "JS": 1, "Python": 2 };
         setLanguages(lang)
-        const contrib = await fetchAsync(data.contributors_url);
+        // const contrib = await fetchAsync(data.contributors_url);
+        const contrib = delMe.data;
         setContributors(contrib)
         setLoading(false);
       } catch (err) {
@@ -46,11 +51,11 @@ const Card = () => {
         return (
           <>
             <h2>{person.login}</h2>
-            <h3>{person.avatar_url}</h3>  
+            <h3>{person.avatar_url}</h3>
           </>
         )
-      } 
-        )}
+      }
+      )}
     </>
   );
 }

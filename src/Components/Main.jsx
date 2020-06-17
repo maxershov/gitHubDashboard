@@ -5,6 +5,8 @@ import Search from './Search';
 import useQueryGetter from './useQueryGetter'
 import fetchAsync from '../fetchAsync';
 
+import './Main.css';
+
 import token from '../../token';
 
 
@@ -22,9 +24,9 @@ const Main = () => {
       try {
         const data = await fetchAsync(`http://localhost:6701/getData/${page}`);
         // const data = await fetchAsync(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`, {
-          // headers: {
-          //   authorization: token
-          // }})
+        // headers: {
+        //   authorization: token
+        // }})
         setRepos(data.items);
         setLoading(false);
       } catch (err) {
@@ -38,9 +40,10 @@ const Main = () => {
   return loading ? <h1>LOADING</h1> : (
     <>
       <Search />
-      <h1>Main Page</h1>
-      {repos.map(repo =>
-        <Repo id={repo.id} name={repo.name} url={repo.html_url} stars={repo.stargazers_count} updated={repo.updated_at} />)}
+      <section className="repo-list">
+        {repos.map(repo =>
+          <Repo id={repo.id} name={repo.name} url={repo.html_url} stars={repo.stargazers_count} updated={repo.updated_at} />)}
+      </section>
       <Pagination />
     </>
   );

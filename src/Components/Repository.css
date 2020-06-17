@@ -1,0 +1,28 @@
+.repo {
+    border: solid 1px black;
+    min-width: 500px;
+    margin: 10px 5px;
+    flex-grow: 1;
+}
+
+.repo__name {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.starImg {
+    display: inline-block;
+    vertical-align: center;
+    position: relative;
+    top: 2px;
+    height: 1rem;
+}
+
+.repo_stars {
+    /* display: inline-block; */
+}
+
+.repo__url {
+    display: block;
+}

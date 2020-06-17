@@ -1,15 +1,20 @@
 import React from 'preact/compat';
 import { Link } from 'react-router-dom';
+import star from '../assets/star.svg';
+
+import './Repository.css';
 
 const Repository = (props) => {
   const { id, name, url, stars, updated } = props;
   return (
-    <>
-      <Link to={`/card/${id}`}>{name}</Link>
-      <h1>{url}</h1>
-      <p>{stars}</p>
-      <p>{updated}</p>
-    </>
+    <article className="repo">
+      <Link className="repo__name" to={`/card/${id}`}>{name}</Link>
+      <p className="repo_stars">
+        <img className="starImg" alt="star" src={star} />{stars}
+      </p>
+      <p className="repo_updated">{updated}</p>
+      <a href={url} className="repo__url">Link to GitHub</a>
+    </article>
   );
 }
 

@@ -2,6 +2,9 @@ import React, {createRef} from 'preact/compat';
 import {useHistory} from 'react-router-dom';
 import useQueryGetter from './useQueryGetter';
 
+import './Search.css';
+
+
 const Search = () => {
     // https://api.github.com/search/repositories?q=tetris&sort=stars
     const { pageNum } = useQueryGetter();
@@ -13,12 +16,12 @@ const Search = () => {
       history.push(`?search=${inputRef.current.value}&page=${pageNum}`);
     }
     return (
-      <>
-        <form onSubmit={handleSubmit}>
-          <input type="text" ref={inputRef} />
-          <button type="submit">SEARCH</button>
+      <div className="search">
+        <form className="search__form" onSubmit={handleSubmit}>
+          <input className="search__input" type="text" placeholder="Название репозитория" ref={inputRef} />
+          <button className="search__btn" type="submit">ПОИСК</button>
         </form>
-      </>
+      </div>
     );
 }
 

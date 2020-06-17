@@ -1,0 +1,15 @@
+.search {
+    text-align: center;
+}
+
+.search__form>* {
+    font-size: 1.1rem;
+}
+
+.search__input {
+    width: 65%;
+}
+
+.search__button {
+    width: 15%
+}
