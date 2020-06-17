@@ -1,0 +1,16 @@
+.header__logo {
+  width: 4%;
+  margin-top: 5px;
+}
+
+.header__text {
+  display:inline-block;
+  letter-spacing: 2px;
+  font-size: 2.3em;
+}
+
+.header__link {
+  /* display: block; */
+  /* display:inline-block; */
+  margin: 3px 10px;
+}
