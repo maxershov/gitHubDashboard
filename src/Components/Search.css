@@ -3,30 +3,18 @@
     margin: 0 10px;
 }
 
-.search__form>* {
-    font-size: 1rem;
-}
-
 .search__input {
-    border: solid grey;
-    padding: 8px 4px;
-    width: 20%;
-    border-top: none;
+    font-size: 1.1rem;
+    border: solid rgb(165, 164, 164);
+    padding: 6px 4px;
+    width: 25%;
     border-left: none;
-    border-right: none;
+    /* border-radius: 15px; */
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
 }
 
 .search__input:focus {
-    width: 80%;
+    width: 95%;
     transition: width 0.4s ease-in-out;
-}
-
-.search__btn {
-    border: solid grey;
-    background-color: rgb(247, 247, 248);
-    border-top: none;
-    font-weight: bold;
-    padding: 8px 5px;
-    border-bottom-right-radius: 15px;
-    border-left: none;
 }
