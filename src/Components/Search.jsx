@@ -1,16 +1,23 @@
-import React from 'preact/compat';
+import React, {createRef} from 'preact/compat';
+import {useHistory} from 'react-router-dom';
+import useQueryGetter from './useQueryGetter';
 
 const Search = () => {
     // https://api.github.com/search/repositories?q=tetris&sort=stars
-
-    // onClick push to history
+    const { pageNum } = useQueryGetter();
+    const history = useHistory();
+    const inputRef = createRef();
+    
+    function handleSubmit(e){
+      e.preventDefault();
+      history.push(`?search=${inputRef.current.value}&page=${pageNum}`);
+    }
     return (
       <>
-        <form>
-          <input type="text" />
+        <form onSubmit={handleSubmit}>
+          <input type="text" ref={inputRef} />
           <button type="submit">SEARCH</button>
         </form>
-        <h1>SEARCH</h1>
       </>
     );
 }
