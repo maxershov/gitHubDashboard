@@ -29,8 +29,7 @@ app.get("/getData/:pageNum", (req, res) => {
 app.get("/getRepo/:repoId", (req, res) => {
     const { repoId } = req.params;
     res.send(JSON.stringify(repoData.repositoryData))
-}
-);
+});
 
 
 app.listen(port);
