@@ -5,8 +5,6 @@ import star from '../assets/star.svg';
 import arrow from '../assets/arrow.svg';
 import './Card.css';
 
-// import token from '../../token';
-
 
 const Card = () => {
   const [loading, setLoading] = useState(true);
@@ -20,29 +18,13 @@ const Card = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchAsync(`https://api.github.com/repositories/${id}`)
-
-        // const data = await fetchAsync(`https://api.github.com/repositories/${id}`, {
-        //   headers: {
-        //     authorization: token
-        //   }
-        // });
+        const data = await fetchAsync(`https://api.github.com/repositories/${id}`);
         setRepo(data);
 
         const lang = await fetchAsync(data.languages_url)
-        // const lang = await fetchAsync(data.languages_url, {
-        //   headers: {
-        //     authorization: token
-        //   }
-        // });
         setLanguages(lang)
 
-        const contrib = await fetchAsync(`${data.contributors_url}?per_page=10`)
-        // const contrib = await fetchAsync(`${data.contributors_url}?per_page=10`, {
-        //   headers: {
-        //     authorization: token
-        //   }
-        // });
+        const contrib = await fetchAsync(`${data.contributors_url}?per_page=10`);
         setContributors(contrib)
 
         setLoading(false);

@@ -12,7 +12,6 @@ const Pagination = (props) => {
   function getPagesArr(start) {
 
     const lastPage = Math.floor(props.total / 10);
-
     let page = start
     const minusArr = []
     const plusArr = []
@@ -21,7 +20,7 @@ const Pagination = (props) => {
       minusArr.unshift(page);
       --page;
     }
-    
+
     while (plusArr.length < 10 - minusArr.length && start <= lastPage) {
       start++;
       plusArr.push(start);

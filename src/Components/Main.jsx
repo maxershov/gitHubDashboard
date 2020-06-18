@@ -8,7 +8,6 @@ import fetchAsync from '../fetchAsync';
 
 import './Main.css';
 
-// import token from '../../token';
 
 const Main = () => {
   const { searchQuery, pageNum } = useQueryGetter();
@@ -23,11 +22,6 @@ const Main = () => {
       try {
         setLoading(true);
         const data = await fetchAsync(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&page=${pageNum}&per_page=10`)
-        // const data = await fetchAsync(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&page=${pageNum}&per_page=10`, {
-        //   headers: {
-        //     authorization: token
-        //   }
-        // })
         setRepos(data.items);
         setTotalItems(data.total_count);
         setLoading(false);
