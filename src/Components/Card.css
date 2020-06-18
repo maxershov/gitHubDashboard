@@ -7,7 +7,9 @@
   padding: 20px 0;
   border-radius: 20px;
   box-shadow: 0px 6px 8px rgb(80, 77, 77), -0px -1px 10px rgb(199, 191, 191);
+  animation: fadein 0.4s;
 }
+
 
 .back-Btn {
   position: absolute;
@@ -16,6 +18,7 @@
   padding: 0px 10px;
   background-color: none;
   border: none;
+  animation: slide 0.6s ease-in-out;
 }
 
 .back-img {

@@ -12,7 +12,7 @@ const Header = () => {
         <Link to="/main" className="header__link">
           <img className="header__logo" alt="githubLogo" src={githubLogo} />
         </Link>
-        <h1 className="header__text">GitHub API Dashboard</h1>
+        <h1 className="header__text">GitHub Dashboard</h1>
       </div>
     </header>
   );
