@@ -22,6 +22,7 @@ const Main = () => {
     console.log("token", token);
     async function fetchData() {
       try {
+        setLoading(true);
         const data = await fetchAsync(`http://localhost:6701/getData/${page}`);
         // const data = await fetchAsync(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`, {
         // headers: {

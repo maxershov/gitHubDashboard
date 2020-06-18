@@ -3,5 +3,5 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 5px;
-    animation: fadein 0.7s;
+    animation: slideLeft 0.7s;
 }
