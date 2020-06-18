@@ -6,7 +6,7 @@ const helmet = require("helmet");
 const path = require("path");
 
 const port = process.env.PORT || 3000;
-const staticFiles = expressStaticGzip(path.join(__dirname, "dist"));
+const staticFiles = expressStaticGzip(path.join(__dirname, '../', "dist"));
 
 const app = express();
 app.use(helmet());
