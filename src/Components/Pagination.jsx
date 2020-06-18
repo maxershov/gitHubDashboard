@@ -7,9 +7,12 @@ import useQueryGetter from './useQueryGetter';
 import './Pagination.css';
 
 
-const Pagination = () => {
+const Pagination = (props) => {
 
   function getPagesArr(start) {
+
+    const lastPage = Math.floor(props.total / 10);
+
     let page = start
     const minusArr = []
     const plusArr = []
@@ -19,7 +22,7 @@ const Pagination = () => {
       --page;
     }
     
-    while (plusArr.length < 10 - minusArr.length) {
+    while (plusArr.length < 10 - minusArr.length && start <= lastPage) {
       start++;
       plusArr.push(start);
     }

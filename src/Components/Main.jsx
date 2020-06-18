@@ -14,6 +14,7 @@ const Main = () => {
   const { searchQuery, pageNum } = useQueryGetter();
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState([]);
+  const [totalItems, setTotalItems] = useState();
   const history = useHistory();
 
 
@@ -28,7 +29,7 @@ const Main = () => {
         //   }
         // })
         setRepos(data.items);
-
+        setTotalItems(data.total_count);
         setLoading(false);
 
       } catch (err) {
@@ -46,7 +47,7 @@ const Main = () => {
         {repos.map(repo =>
           <Repo id={repo.id} name={repo.name} url={repo.html_url} stars={repo.stargazers_count} updated={repo.updated_at} />)}
       </section>
-      <Pagination />
+      <Pagination total={totalItems} />
     </>
   );
 }
