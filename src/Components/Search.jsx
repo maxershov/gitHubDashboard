@@ -22,6 +22,14 @@ const Search = () => {
   }, []);
 
 
+  function searchIfNotEmpty(value) {
+    if (value) {
+      history.push(`?search=${value}&page=${pageNum}`);
+    } else {
+      history.push(`?search=stars:%3E1&page=${pageNum}`);
+    }
+  }
+
   function handleInput(e) {
     e.preventDefault();
     setSearch(e.target.value);
@@ -30,7 +38,7 @@ const Search = () => {
       clearTimeout(timeoutFetch);
     }
     setTimeoutFetch(setTimeout(() => {
-      history.push(`?search=${inputRef.current}&page=${pageNum}`);
+      searchIfNotEmpty(inputRef.current);
     }, 1000));
   }
 
@@ -38,7 +46,7 @@ const Search = () => {
   function handleSubmit(e) {
     e.preventDefault();
     clearTimeout(timeoutFetch);
-    history.push(`?search=${search}&page=${pageNum}`);
+    searchIfNotEmpty(search)
   }
 
   return (
