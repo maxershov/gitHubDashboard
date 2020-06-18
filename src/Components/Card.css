@@ -63,13 +63,14 @@
 }
 
 .languages {
-  display: flex;
-  justify-content: space-evenly;
-  /* list-style: none; */
+  list-style: none;
+  padding: 10px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .languages__item {
+  display: inline-block;
   font-size: 1.1em;
   font-weight: bold;
   margin: 0px 4px;

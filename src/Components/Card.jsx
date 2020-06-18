@@ -9,11 +9,6 @@ import token from '../../token';
 import host from '../../host';
 import delMe from '../../backend/contr';
 
-// https://api.github.com/repositories/:id
-
-// https://api.github.com/repos/996icu/996.ICU/contributors?per_page=5
-// https://api.github.com/repos/996icu/996.ICU/languages
-// anon	string	Set to 1 or true to include anonymous contributors in results. 
 
 const Card = () => {
   const [loading, setLoading] = useState(true);
@@ -37,7 +32,7 @@ const Card = () => {
         //   headers: {
         //     authorization: token
         //   }});
-        const lang = { "JS": 1, "Python": 2 };
+        const lang = { "JS": 1, "Python": 2, "C++": 1, "Java": 1, "Objective-c": 1, "JavaScript": 1, "Starlark": 1, "Ruby": 1, "Shell": 1, "HTML": 1, "Makefile": 1, "Assembly": 1, "C": 1, "CSS": 1, "Kotlin": 1, "CMake": 1, "Batchfile": 1 };
         setLanguages(lang)
         // const contrib = await fetchAsync(`${data.contributors_url}?per_page=10`, {
         //   headers: {
