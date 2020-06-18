@@ -7,6 +7,8 @@ const dataTwo = require("./dataTwo");
 const repoData = require("./repositoryData");
 
 
+const host = require("../host")
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -17,7 +19,6 @@ const port = 6701;
 
 app.get("/getData/:pageNum", (req, res) => {
     const { pageNum } = req.params;
-    console.log(pageNum)
     if (pageNum === "1") {
         res.send(JSON.stringify(data.data))
     } else {
@@ -32,5 +33,5 @@ app.get("/getRepo/:repoId", (req, res) => {
 });
 
 
-app.listen(port);
-console.log(`App is listening on :${port}`);
+app.listen(port, host);
+console.log(`App is listening on ${host}:${port}`);

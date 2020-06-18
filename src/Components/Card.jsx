@@ -5,6 +5,8 @@ import star from '../assets/star.svg';
 import arrow from '../assets/arrow.svg';
 import './Card.css';
 
+import token from '../../token';
+import host from '../../host';
 import delMe from '../../backend/contr';
 
 // https://api.github.com/repositories/:id
@@ -25,12 +27,22 @@ const Card = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchAsync(`http://localhost:6701/getRepo/${id}`);
+        const data = await fetchAsync(`http://${host}:6701/getRepo/${id}`);
+        // const data = await fetchAsync(`https://api.github.com/repositories/${id}`, {
+        //   headers: {
+        //     authorization: token
+        //   }});
         setRepo(data);
-        // const lang = await fetchAsync(data.languages_url);
+        // const lang = await fetchAsync(data.languages_url, {
+        //   headers: {
+        //     authorization: token
+        //   }});
         const lang = { "JS": 1, "Python": 2 };
         setLanguages(lang)
-        // const contrib = await fetchAsync(data.contributors_url);
+        // const contrib = await fetchAsync(`${data.contributors_url}?per_page=10`, {
+        //   headers: {
+        //     authorization: token
+        //   }});
         const contrib = delMe.data;
         setContributors(contrib)
         setLoading(false);

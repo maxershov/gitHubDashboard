@@ -2,6 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const host = require('./host');
+
+
 module.exports = {
   context: path.resolve(__dirname),
   mode: "development",
@@ -14,6 +17,7 @@ module.exports = {
     publicPath: "/"
   },
   devServer: {
+    host,
     port: 6801,
     open: true,
     hot: true,

@@ -8,7 +8,10 @@ import fetchAsync from '../fetchAsync';
 
 import './Main.css';
 
+
 import token from '../../token';
+import host from '../../host';
+
 
 
 const Main = () => {
@@ -20,16 +23,16 @@ const Main = () => {
 
 
   useEffect(() => {
-    const page = pageNum ?? 1; // TODO delete
-    console.log(`will be fetched search=${searchQuery} and page=${pageNum}`)
-    // fetch(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`)
+    // const page = pageNum ?? 1; // TODO delete
+    // console.log(`will be fetched search=${searchQuery} and page=${pageNum}`)
     async function fetchData() {
       try {
         setLoading(true);
-        const data = await fetchAsync(`http://localhost:6701/getData/${page}`);
-        // const data = await fetchAsync(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`, {
+        console.log(`/getData/${pageNum}`);
+        const data = await fetchAsync(`http://${host}:6701/getData/${pageNum}`);
+        // const data = await fetchAsync(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&page=${pageNum}&per_page=10`, {
         // headers: {
-        //   authorization: token
+          // authorization: token
         // }})
         setRepos(data.items);
         setLoading(false);
