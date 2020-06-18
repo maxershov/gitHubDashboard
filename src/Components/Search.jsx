@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from 'preact/compat';
+import React, { useRef, useState, useEffect } from 'preact/compat';
 import { useHistory } from 'react-router-dom';
 import useQueryGetter from './useQueryGetter';
 import './Search.css';
@@ -7,19 +7,22 @@ import './Search.css';
 
 const Search = () => {
   // https://api.github.com/search/repositories?q=tetris&sort=stars
-  const { pageNum } = useQueryGetter();
+  const { searchQuery, pageNum } = useQueryGetter();
   const [timeoutFetch, setTimeoutFetch] = useState();
   const history = useHistory();
-  const [searchQuery, setSearchQuery] = useState();
+  const [search, setSearch] = useState();
 
   // Fix right value in setTimeout closure
-  const inputRef = useRef(searchQuery);
-  inputRef.current = searchQuery;
+  const inputRef = useRef(search);
+  inputRef.current = search;
 
+  useEffect(() => {
+    if (searchQuery !== "stars:%3E1") setSearch(searchQuery);
+  }, []);
 
   function handleInput(e) {
     e.preventDefault();
-    setSearchQuery(e.target.value);
+    setSearch(e.target.value);
 
     if (timeoutFetch) {
       clearTimeout(timeoutFetch);
@@ -33,13 +36,13 @@ const Search = () => {
   function handleSubmit(e) {
     e.preventDefault();
     clearTimeout(timeoutFetch);
-    history.push(`?search=${searchQuery}&page=${pageNum}`);
+    history.push(`?search=${search}&page=${pageNum}`);
   }
 
   return (
     <div className="search">
       <form className="search__form" onSubmit={handleSubmit}>
-        <input onChange={handleInput} className="search__input" type="text" placeholder="SEARCH" value={searchQuery} />
+        <input onChange={handleInput} className="search__input" type="text" placeholder="SEARCH" value={search} />
       </form>
     </div>
   );

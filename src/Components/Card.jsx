@@ -35,7 +35,7 @@ const Card = () => {
         setContributors(contrib)
         setLoading(false);
       } catch (err) {
-        console.log(err);
+        history.push(`/error?${err}`)
       }
     };
     fetchData();

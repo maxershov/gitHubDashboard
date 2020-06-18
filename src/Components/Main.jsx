@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'preact/compat';
+import {useHistory} from 'react-router-dom';
 import Repo from './Repository';
 import Pagination from './Pagination';
 import Search from './Search';
@@ -15,11 +16,13 @@ const Main = () => {
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState([]);
 
+  const history = useHistory();
+
+
   useEffect(() => {
     const page = pageNum ?? 1; // TODO delete
     console.log(`will be fetched search=${searchQuery} and page=${pageNum}`)
     // fetch(`https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&page=1&per_page=5`)
-    console.log("token", token);
     async function fetchData() {
       try {
         setLoading(true);
@@ -31,7 +34,8 @@ const Main = () => {
         setRepos(data.items);
         setLoading(false);
       } catch (err) {
-        console.log(err);
+        history.push(`/error?${err}`)
+        
       }
     };
     fetchData();
