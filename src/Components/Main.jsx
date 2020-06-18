@@ -39,7 +39,7 @@ const Main = () => {
       <Search />
       <section className="repo-list">
         {repos.map(repo =>
-          <Repo id={repo.id} name={repo.name} url={repo.html_url} stars={repo.stargazers_count} updated={repo.updated_at} />)}
+          <Repo id={repo.id} name={repo.name} url={repo.html_url} stars={repo.stargazers_count} pushedAt={repo.pushed_at} />)}
       </section>
       <Pagination total={totalItems} />
     </>
