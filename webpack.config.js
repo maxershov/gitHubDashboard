@@ -68,7 +68,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "assets", "index.html"),
-      title: "Web-React-CRM",
+      title: "GitHub Dashboard",
       favicon: path.join(__dirname, "src", "assets", "favicon.ico"),
       minify: {
         removeComments: true,

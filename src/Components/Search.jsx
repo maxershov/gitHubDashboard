@@ -44,7 +44,8 @@ const Search = () => {
   return (
     <div className="search">
       <form className="search__form" onSubmit={handleSubmit}>
-        <input onChange={handleInput} className="search__input" type="text" placeholder="SEARCH" value={search} />
+        <label className="hidden" htmlFor="search">Search</label>
+        <input id="search" onChange={handleInput} className="search__input" type="text" placeholder="SEARCH" value={search} />
       </form>
     </div>
   );
