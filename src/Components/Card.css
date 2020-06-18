@@ -10,10 +10,9 @@
 }
 
 .back-Btn {
-  position: relative;
-  display: inline;
-  top: 45px;
-  left: 30px;
+  position: absolute;
+  display: block;
+  margin-left: 5%;
   padding: 0px 10px;
   background-color: none;
   border: none;

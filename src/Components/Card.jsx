@@ -41,7 +41,7 @@ const Card = () => {
     fetchData();
 
   }, [id])
-  return loading ? <h1>LOADING</h1> : (
+  return loading ? <div className="spinner" /> : (
     <>
       <button className="back-Btn" type="button" onClick={() => history.goBack()}>
         <img className="back-img" src={arrow} alt="Go back" />

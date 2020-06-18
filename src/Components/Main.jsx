@@ -37,7 +37,7 @@ const Main = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageNum, searchQuery])
-  return loading ? <h1>LOADING</h1> : (
+  return loading ? <div className="spinner" /> : (
     <>
       <Search />
       <section className="repo-list">
