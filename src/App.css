@@ -39,6 +39,24 @@ p, h1, h2, h3 {
   }
 }
 
+@media (min-width: 550px) and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 3840px) {
+  html {
+    font-size: 36px;
+  }
+}
+
 .label {
   text-transform: uppercase;
   font-weight: bold;
