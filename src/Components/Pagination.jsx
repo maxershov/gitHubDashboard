@@ -18,6 +18,7 @@ const Pagination = () => {
       minusArr.unshift(page);
       --page;
     }
+    
     while (plusArr.length < 10 - minusArr.length) {
       start++;
       plusArr.push(start);

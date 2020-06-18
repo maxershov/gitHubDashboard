@@ -43,7 +43,7 @@ module.exports = {
             }
           }
         ]
-      },{
+      }, {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [{
           loader: 'file-loader',
@@ -81,7 +81,7 @@ module.exports = {
       }
     }),
     new CompressionPlugin({
-      algorithm:"gzip"
+      algorithm: "gzip"
     }),
     new UglifyJsPlugin({
       uglifyOptions: {

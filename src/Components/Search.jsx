@@ -2,23 +2,25 @@
 import React, { useRef, useState, useEffect } from 'preact/compat';
 import { useHistory } from 'react-router-dom';
 import useQueryGetter from './useQueryGetter';
+
 import './Search.css';
 
 
 const Search = () => {
-  // https://api.github.com/search/repositories?q=tetris&sort=stars
   const { searchQuery, pageNum } = useQueryGetter();
   const [timeoutFetch, setTimeoutFetch] = useState();
   const history = useHistory();
   const [search, setSearch] = useState();
 
-  // Fix right value in setTimeout closure
+  /* Fix right value in setTimeout closure */
   const inputRef = useRef(search);
   inputRef.current = search;
+
 
   useEffect(() => {
     if (searchQuery !== "stars:%3E1") setSearch(searchQuery);
   }, []);
+
 
   function handleInput(e) {
     e.preventDefault();

@@ -8,17 +8,12 @@ import fetchAsync from '../fetchAsync';
 
 import './Main.css';
 
-
 import token from '../../token';
-import host from '../../host';
-
-
 
 const Main = () => {
   const { searchQuery, pageNum } = useQueryGetter();
   const [loading, setLoading] = useState(true);
   const [repos, setRepos] = useState([]);
-
   const history = useHistory();
 
 
@@ -26,17 +21,17 @@ const Main = () => {
     async function fetchData() {
       try {
         setLoading(true);
-        const data = await fetchAsync(`http://${host}:6701/getData/${pageNum}`);
-        // const data = await fetchAsync(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&page=${pageNum}&per_page=10`, {
-        //   headers: {
-        //     authorization: token
-        //   }
-        // })
+        const data = await fetchAsync(`https://api.github.com/search/repositories?q=${searchQuery}&sort=stars&page=${pageNum}&per_page=10`, {
+          headers: {
+            authorization: token
+          }
+        })
         setRepos(data.items);
+
         setLoading(false);
+
       } catch (err) {
         history.push(`/error?${err}`)
-
       }
     };
     fetchData();

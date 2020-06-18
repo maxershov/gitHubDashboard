@@ -1,14 +1,14 @@
 {
   "name": "github_dashboard",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple GitHub dashboard",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server  --config ./devWebpack.config.js",
     "local": "node ./backend/local.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "start": "node ,/backend/server.js",
+    "start": "node ./backend/server.js"
   },
   "browserslist": [
     ">1%",
@@ -19,7 +19,11 @@
     "npm": "6.13.4"
   },
   "author": "MaxErshov",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxershov/gitHubDashboard.git"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
     "body-parser": "^1.19.0",

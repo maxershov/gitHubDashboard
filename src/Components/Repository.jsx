@@ -7,6 +7,7 @@ import './Repository.css';
 
 const Repository = (props) => {
   const { id, name, url, stars, updated } = props;
+  
   return (
     <article className="repo">
       <p className="repo__label label">Name</p>

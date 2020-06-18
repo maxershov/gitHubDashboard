@@ -6,48 +6,51 @@ import arrow from '../assets/arrow.svg';
 import './Card.css';
 
 import token from '../../token';
-import host from '../../host';
-import delMe from '../../backend/contr';
 
 
 const Card = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const history = useHistory();
-
   const [repo, setRepo] = useState([]);
   const [languages, setLanguages] = useState({});
   const [contributors, setContributors] = useState([]);
 
+
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await fetchAsync(`http://${host}:6701/getRepo/${id}`);
-        // const data = await fetchAsync(`https://api.github.com/repositories/${id}`, {
-        //   headers: {
-        //     authorization: token
-        //   }});
+        const data = await fetchAsync(`https://api.github.com/repositories/${id}`, {
+          headers: {
+            authorization: token
+          }
+        });
         setRepo(data);
-        // const lang = await fetchAsync(data.languages_url, {
-        //   headers: {
-        //     authorization: token
-        //   }});
-        const lang = { "JS": 1, "Python": 2, "C++": 1, "Java": 1, "Objective-c": 1, "JavaScript": 1, "Starlark": 1, "Ruby": 1, "Shell": 1, "HTML": 1, "Makefile": 1, "Assembly": 1, "C": 1, "CSS": 1, "Kotlin": 1, "CMake": 1, "Batchfile": 1 };
+
+        const lang = await fetchAsync(data.languages_url, {
+          headers: {
+            authorization: token
+          }
+        });
         setLanguages(lang)
-        // const contrib = await fetchAsync(`${data.contributors_url}?per_page=10`, {
-        //   headers: {
-        //     authorization: token
-        //   }});
-        const contrib = delMe.data;
+
+        const contrib = await fetchAsync(`${data.contributors_url}?per_page=10`, {
+          headers: {
+            authorization: token
+          }
+        });
         setContributors(contrib)
+
         setLoading(false);
+
       } catch (err) {
         history.push(`/error?${err}`)
       }
     };
     fetchData();
-
   }, [id])
+
+
   return loading ? <div className="spinner" /> : (
     <>
       <button className="back-Btn" type="button" onClick={() => history.goBack()}>
