@@ -2,12 +2,18 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   color: #3f3f3f;
   text-align: center;
 }
+
+/* Fix defaults */
 
 button, input, a {
   font-family: inherit;
@@ -16,6 +22,21 @@ button, input, a {
 
 p, h1, h2, h3 {
   margin: 5px;
+}
+
+/* Media */
+
+@media (max-width: 550px) {
+  html {
+    font-size: 11px;
+  }
+  .repo {
+    min-width: 300px !important;
+  }
+  .search__input {
+    /* fix IOS zoom on focus */
+    font-size: 16px !important;
+  }
 }
 
 .label {
@@ -30,7 +51,7 @@ p, h1, h2, h3 {
   text-decoration: none;
   font-weight: bold;
   display: block;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.1px;
 }
 
 .link:hover {
@@ -38,7 +59,6 @@ p, h1, h2, h3 {
 }
 
 .spinner {
-  /* margin: 10% 50%; */
   margin: 5% auto;
   width: 10em;
   height: 10em;

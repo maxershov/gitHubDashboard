@@ -72,7 +72,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "assets", "index.html"),
-      title: "GitHub_Api",
+      title: "GitHub Dashboard",
       favicon: path.join(__dirname, "src", "assets", "favicon.ico")
     }),
     new MiniCssExtractPlugin()

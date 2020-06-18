@@ -18,7 +18,8 @@ const Repository = (props) => {
       <p className="repo__label label">Last Updated</p>
       <p className="repo__updated">{new Date(updated).toLocaleString('ru')}</p>
       <a href={url} className="repo__url link">
-        <img className="repo__image" alt="githubLogo" src={githubLogo} /> OPEN GITHUB
+        <img className="repo__image" alt="githubLogo" src={githubLogo} />
+        OPEN GITHUB
       </a>
     </article>
   );
