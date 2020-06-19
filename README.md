@@ -15,4 +15,7 @@ Live version https://max-github-dashboard.herokuapp.com/
 **TODO** убрать из карты репозитория лишний fetch и использовать данные из Main, если они есть.
 **TODO** create SVG sprite
 
-![Alt text](https://github.com/maxershov/gitHubDashboard/blob/master/screenshot.PNG?raw=true)
+
+<p align="center">
+<img src="https://github.com/maxershov/gitHubDashboard/blob/master/screenshot.PNG" width="70%">
+</p>
