@@ -1,5 +1,7 @@
 # gitHubDashboard
 
+Live version https://max-github-dashboard.herokuapp.com/
+
 Выполните ```npm i``` для установки пакетов, ```npm run build``` для создания бандла и ```npm run start``` для запуска сервера на ```localhost:3000```
 
 Тестировалось на IE11, IOS Safari 13, Chrome 81, Firefox 77
@@ -12,3 +14,5 @@
 
 **TODO** убрать из карты репозитория лишний fetch и использовать данные из Main, если они есть.
 **TODO** create SVG sprite
+
+![Alt text](https://github.com/maxershov/gitHubDashboard/blob/master/screenshot.PNG?raw=true)
