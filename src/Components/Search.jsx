@@ -31,7 +31,6 @@ const Search = () => {
   }
 
   function handleInput(e) {
-    e.preventDefault();
     setSearch(e.target.value);
 
     if (timeoutFetch) {
