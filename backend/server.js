@@ -9,7 +9,16 @@ const port = process.env.PORT || 3000;
 const staticFiles = expressStaticGzip(path.join(__dirname, '../', "dist"));
 
 const app = express();
-app.use(helmet());
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        defaultSrc: ["'self'", "api.github.com", "*.githubusercontent.com", "fonts.googleapis.com", "fonts.gstatic.com"],
+        scriptSrc: ["'self'", "example.com"],
+        objectSrc: ["'none'"],
+        fontSrc: ["'self'", "fonts.googleapis.com", "fonts.gstatic.com"],
+        styleSrc: ["'self'", "fonts.googleapis.com", "fonts.gstatic.com"],
+        upgradeInsecureRequests: [],
+    },
+}));
 app.use(staticFiles);
 app.use(history());
 app.listen(port);
