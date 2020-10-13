@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__wrapper">
-        <Link to="/main" className="header__link">
+        <Link to="/gh-dash/" className="header__link">
           <img className="header__logo" alt="githubLogo" src={githubLogo} />
         </Link>
         <h1 className="header__text">GitHub Dashboard</h1>

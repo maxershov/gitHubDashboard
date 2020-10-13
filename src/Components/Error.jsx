@@ -12,7 +12,7 @@ const Error = () => {
       <p className="error__text">Oops!</p>
       <p>Something went wrong</p>
       <p className="error-msg">{decodeURI(location)}</p>
-      <Link to="/main" className="link">Back to Main Page</Link>
+      <Link to="/gh-dash/" className="link">Back to Main Page</Link>
     </section>
   );
 }
