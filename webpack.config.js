@@ -11,8 +11,8 @@ module.exports = {
   mode: "production",
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "[name].bundle.js",
-    publicPath: "/"
+    filename: '[name].[contenthash].bundle.js',
+    publicPath: "https://maksershov.ru/gh-dash/"
   },
   resolve: {
     extensions: [".jsx", ".js", ".json"],
