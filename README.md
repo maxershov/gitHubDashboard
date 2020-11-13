@@ -3,8 +3,8 @@
 Тестовое задание в **Avito**
 
 ## Онлайн версия приложения ## 
-https://max-github-dashboard.herokuapp.com/
-(Trial тариф Heroku - сайт дольше загружается)
+https://www.maksershov.ru/gh-dash/
+
 
 ### Commands ###
 Выполните ```npm i``` для установки пакетов, ```npm run build``` для сборки и ```npm run start``` для запуска сервера на ```localhost:3000```
@@ -25,7 +25,6 @@ https://max-github-dashboard.herokuapp.com/
 
 **TODO** add API with GitHub token in .env => chg limit
 **TODO** убрать из карты репозитория лишний fetch и использовать данные из Main, если они есть.
-**TODO** create SVG sprite
 
 <p align="center">
 <img src="https://github.com/maxershov/gitHubDashboard/blob/master/screenshots/screenshot0.PNG" width="70%">
